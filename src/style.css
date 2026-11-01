@@ -34,3 +34,14 @@ button {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }   
+.container {
+  width: 100%;
+  text-align: center;
+}
+
+.students {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px;
+}

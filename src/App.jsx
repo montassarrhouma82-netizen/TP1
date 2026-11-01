@@ -1,39 +1,106 @@
-import { useState } from 'react'
-import pro from './assets/pro.webp'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
 import './style.css'
 import './App.css'
-const student ={
-  name: 'Montassar',
-  age: 22,
-  email: 'montassarrhouma82@gmail.com',
-  tel: ' 95884692',
-  gender: 'male',
-  addresse: 'mahdia',
-  anneedetude:'2026',
-  Filliere:'Genie Logiciel et Systeme d’Information',
-  Groupe:'GLSI2',
-  umg:'image',
+import StudentCard from './components/StudentCard'
+import pro from './assets/pro.webp'
+import bro from './assets/bro.avif'
+import woman from './assets/woman.webp'
+import gra from './assets/gra.avif'
 
+const etudiants = [
+  {
+    prenom: "Montassar",
+    nom: "Rhouma",
+    age: "22",
+    email: "montassarrhouma82@gmail.com",
+    telephone: "95884692",
+    tel: "95884692",
+    gender: "male",
+    addresse: "Mahdia",
+    filiere: "Genie Logiciel et Systeme d’Information",
+    anneeEtude: "2026",
+    groupe: "GLSI2",
+    ville: "Mahdia",
+    umg: "image",
+    image: pro
+  },
+  {
+    prenom: "Mariem",
+    nom: "Marzouk",
+    age: "20",
+    email: "marzoukmariem@gmail.com",
+    telephone: "98765432",
+    tel: "98765432",
+    gender: "female",
+    addresse: "nabeul",
+    filiere: "Genie Logiciel et Systeme d’Information",
+    anneeEtude: "2026",
+    groupe: "GLSI2",
+    ville: "Mahdia",
+    umg: "image",
+    image: woman
+  },
+  {
+    prenom: "Amine",
+    nom: "Guesmi",
+    age: "21",
+    email: "amine@gmail.com",
+    telephone: "98765431",
+    tel: "98765431",
+    gender: "male",
+    addresse: "sfax",
+    filiere: "Genie Logiciel et Systeme d’Information",
+    anneeEtude: "2026",
+    groupe: "GLSI2",
+    ville: "Sousse",
+    umg: "image",
+    image: bro
+  },
+  {
+    prenom: "Mariem",
+    nom: "Khalfallah",
+    age: "21",
+    email: "mariem@gmail.com",
+    telephone: "98765430",
+    tel: "98765430",
+    gender: "female",
+    addresse: "Monastir",
+    filiere: "Genie Logiciel et Systeme d’Information",
+    anneeEtude: "2026",
+    groupe: "GLSI2",
+    ville: "Monastir",
+    umg: "image",
+    image: gra
+  }
+]
 
-}
-const age = 22
 function App() {
   return (
-    <div>
-      <img src={pro} alt="pro" /> 
-      <h1>Fiche étudiant</h1> 
-      <p>Nom et Prenom:{student.name}</p>
-      <p>age:{student.age} ans</p>
-      <p>email:{student.email}</p>
-      <p>tel:{student.tel}</p>
-      <p>gender:{student.gender}</p>
-      <p>addresse:{student.addresse}</p>
-      <p>anneedetude:{student.anneedetude}</p>
-      <p>Filliere:{student.Filliere}</p>
-      <p>Groupe:{student.Groupe}</p>
-      <button type="submit">Conntactez</button>
+    <div className="container">
+
+      <h1>Liste des étudiants</h1>
+
+      <div className="students">
+
+        {etudiants.map((etudiant) => (
+          <StudentCard
+            prenom={etudiant.prenom}
+            nom={etudiant.nom}
+            age={etudiant.age}
+            email={etudiant.email}
+            telephone={etudiant.telephone}
+            tel={etudiant.tel}
+            gender={etudiant.gender}
+            addresse={etudiant.addresse}
+            filiere={etudiant.filiere}
+            anneeEtude={etudiant.anneeEtude}
+            groupe={etudiant.groupe}
+            ville={etudiant.ville}
+            umg={etudiant.umg}
+            image={etudiant.image}
+          />
+        ))}
+
+      </div>
     </div>
   )
 }
